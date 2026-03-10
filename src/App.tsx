@@ -54,10 +54,10 @@ const Navbar = () => {
       {/* Top Header */}
       <div className="flex items-center justify-between px-6 lg:px-20 py-4 bg-white border-b border-slate-100">
         <Link to="/" className="flex items-center gap-2 py-2">
-          <img 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_Wc-smDMpnZi9cF8lketZy0AhDa5tXd8GjcIUkcTq8iNwjDcbn0KDrpidDytXIyVSqzQ6mO0qvejTCG96YmZd7w0k95GAOidJEenP7HNpgrx_B7XMLGINXvuUiGJvEyQjlDgZFhi5J-LFjjV8e5EYzD2qSvs3ToMmyvDkmFTHuSf_NrvIDzhmJsRckgYQxhBK6w-7wA9-4Vz5PFaN3L6A3KwkRbdYkTICaoxx4cSsoWuxFSzoYTfUSORh4X84pQEgPw2IKYiobdAb" 
-            alt="Potel Logo" 
-            className="h-16 md:h-20 w-auto object-contain"
+          <img
+            src="/logo.png"
+            alt="Potel Logo"
+            className="h-16 md:h-15 w-auto object-contain"
             referrerPolicy="no-referrer"
           />
         </Link>
@@ -266,7 +266,7 @@ const Footer = () => (
       <div className="col-span-1">
         <Link to="/" className="flex items-center gap-2 mb-8">
           <img 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_Wc-smDMpnZi9cF8lketZy0AhDa5tXd8GjcIUkcTq8iNwjDcbn0KDrpidDytXIyVSqzQ6mO0qvejTCG96YmZd7w0k95GAOidJEenP7HNpgrx_B7XMLGINXvuUiGJvEyQjlDgZFhi5J-LFjjV8e5EYzD2qSvs3ToMmyvDkmFTHuSf_NrvIDzhmJsRckgYQxhBK6w-7wA9-4Vz5PFaN3L6A3KwkRbdYkTICaoxx4cSsoWuxFSzoYTfUSORh4X84pQEgPw2IKYiobdAb" 
+            src="/logo.png"
             alt="Potel Logo" 
             className="h-16 w-auto object-contain"
             referrerPolicy="no-referrer"
