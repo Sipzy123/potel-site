@@ -373,7 +373,7 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    fetch('/api/products')
+    fetch('/products.json')
       .then(res => res.json())
       .then(data => setFeaturedProducts(data.filter((p: Product) => p.is_featured)));
   }, []);
@@ -803,7 +803,7 @@ const ProductsPage = () => {
   const subcategoryFilter = queryParams.get('subcategory');
 
   useEffect(() => {
-    fetch('/api/products')
+    fetch('/products.json')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
@@ -892,7 +892,7 @@ const ProductDetailPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch('/api/products')
+    fetch('/products.json')
       .then(res => res.json())
       .then(data => {
         const found = data.find((p: Product) => p.id === Number(id));
@@ -1412,12 +1412,12 @@ const AdminPage = () => {
   });
 
   useEffect(() => {
-    fetch('/api/products').then(res => res.json()).then(setProducts);
+    fetch('/products.json').then(res => res.json()).then(setProducts);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch('/api/products', {
+    const res = await fetch('/products.json', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newProduct)
