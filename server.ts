@@ -3,7 +3,7 @@ import { createServer as createViteServer } from "vite";
 import path from "path";
 import fs from "fs/promises";
 
-const PRODUCTS_FILE = path.join(process.cwd(), "products.json");
+const PRODUCTS_FILE = path.join(process.cwd(), "public", "products.json");
 
 async function getProducts() {
   try {

@@ -8,6 +8,32 @@ export interface Product {
   image: string;
   specs: string; // JSON string
   is_featured: number;
+  variants?: string[];
+  benefits?: string[];
+  mechanical?: {
+    parameters: string[];
+    ball_bearing: string[];
+    sleeve_bushing: string[];
+  };
+  electrical?: {
+    parameter: string;
+    result: string;
+  }[];
+  material?: {
+    component: string;
+    material: string;
+  }[];
+  environment?: {
+    parameter: string;
+    value: string;
+  }[];
+  ordering_info?: string;
+  mounting_info?: string[];
+  magnetic_cross_talk?: string;
+  electrical_options?: {
+    option: string;
+    description: string;
+  }[];
 }
 
 export interface Category {

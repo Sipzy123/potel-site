@@ -54,10 +54,10 @@ const Navbar = () => {
       {/* Top Header */}
       <div className="flex items-center justify-between px-6 lg:px-20 py-4 bg-white border-b border-slate-100">
         <Link to="/" className="flex items-center gap-2 py-2">
-          <img
-            src="/logo.png"
-            alt="Potel Logo"
-            className="h-16 md:h-15 w-auto object-contain"
+          <img 
+            src="/logo.png" 
+            alt="Potel Logo" 
+            className="h-16 md:h-20 w-auto object-contain"
             referrerPolicy="no-referrer"
           />
         </Link>
@@ -108,7 +108,7 @@ const Navbar = () => {
               onMouseEnter={() => setActiveSubmenu('products')}
               onMouseLeave={() => setActiveSubmenu(null)}
             >
-              <Link to="/public/products" className={`px-6 py-4 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-all flex items-center gap-2 ${location.pathname.startsWith('/products') ? 'bg-white/20' : ''}`}>
+              <Link to="/products" className={`px-6 py-4 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-all flex items-center gap-2 ${location.pathname.startsWith('/products') ? 'bg-white/20' : ''}`}>
                 Products <ChevronDown size={14} />
               </Link>
               
@@ -266,7 +266,7 @@ const Footer = () => (
       <div className="col-span-1">
         <Link to="/" className="flex items-center gap-2 mb-8">
           <img 
-            src="/logo.png"
+            src="/logo.png" 
             alt="Potel Logo" 
             className="h-16 w-auto object-contain"
             referrerPolicy="no-referrer"
@@ -373,7 +373,7 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    fetch('/products.json')
+    fetch('/api/products')
       .then(res => res.json())
       .then(data => setFeaturedProducts(data.filter((p: Product) => p.is_featured)));
   }, []);
@@ -803,7 +803,7 @@ const ProductsPage = () => {
   const subcategoryFilter = queryParams.get('subcategory');
 
   useEffect(() => {
-    fetch('/products.json')
+    fetch('/api/products')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
@@ -892,7 +892,7 @@ const ProductDetailPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch('/products.json')
+    fetch('/api/products')
       .then(res => res.json())
       .then(data => {
         const found = data.find((p: Product) => p.id === Number(id));
@@ -923,6 +923,28 @@ const ProductDetailPage = () => {
         </div>
       </div>
 
+      {/* PDF Style Header */}
+      <div className="bg-[#29a847] py-12 px-6 lg:px-20 text-white">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col gap-2 text-center md:text-left">
+            <h1 className="text-4xl lg:text-6xl font-black uppercase tracking-tight leading-none">
+              {product.name}
+            </h1>
+            <div className="flex items-center gap-4 justify-center md:justify-start mt-4">
+              <span className="bg-white text-[#29a847] px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">
+                {product.category}
+              </span>
+              <div className="size-10 bg-white rounded-full flex items-center justify-center p-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/RoHS_logo.svg/1200px-RoHS_logo.svg.png" alt="RoHS" className="w-full h-full object-contain" />
+              </div>
+            </div>
+          </div>
+          <div className="text-5xl lg:text-7xl font-black opacity-30 tracking-tighter">
+            RHSS-12
+          </div>
+        </div>
+      </div>
+
       <main className="max-w-7xl mx-auto px-6 lg:px-20 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Image Gallery */}
@@ -937,13 +959,10 @@ const ProductDetailPage = () => {
                 alt={product.name} 
                 referrerPolicy="no-referrer" 
               />
-              <div className="absolute top-6 left-6 bg-[#29a847] text-white text-[10px] font-black px-3 py-1.5 rounded-lg uppercase tracking-widest shadow-lg">
-                Premium Quality
-              </div>
             </div>
             
             <div className="grid grid-cols-4 gap-4">
-              {[product.image, "https://picsum.photos/seed/tech1/400/400", "https://picsum.photos/seed/tech2/400/400", "https://picsum.photos/seed/tech3/400/400"].map((img, idx) => (
+              {[product.image, "https://lh3.googleusercontent.com/aida-public/AB6AXuDzd2RlMP7AUTJhKmd98Cne7RvDlchXFL99X8a8N_sCDUV_30e6fiEFlO2B3_fyEnBX43vWmCsOf3crCl170nho0_AVwLBlaS2PEEOQFA3gLAEaHIypKswxMOY7lqPftAj4GZErQwdIR0ACjNNN8XC9sAVy2jiiCEraLV9xeilmx7zstkm0khBjkGl0hbUlVjJx3zrIkOOYcpVntJUk8IDTBXMjuHgjp_ZhaBYOJQWqJ23ew_Lvt8QejG34OelhCSYq_3MwidTujOhi", "https://lh3.googleusercontent.com/aida-public/AB6AXuDPKHe3AMVNf5njsWcGJ66VPZU8kzJ1-G2CymqxGZHwMyzjzyWUyNsetp_L3SZxuKUNFgvcfQatGqVq1VulefBnyTYkxWIgBgo_uqfUrgQBzAV5AivYMbw01mYrqSmo7QLhVyrbTO-z9nHt9xuyAUxQNArSUQqRHwKEa-3vaEQYU6Wm7v-eU_GKZ8ctkSD8qLDv09W_fZRDmtpwPLa04443EjVD9llr55-XzwEh4uaW619tBqj2UukAUJOOAh2RrniQX-pempfQyKQX", "https://lh3.googleusercontent.com/aida-public/AB6AXuDbEJHZjSPCaaiBq2YmLoBubHKWBTPBLV6IW74usbU7X-6Q8OrULUA9gJ5p71eplmJxmzwDIxZV5sg-gdcVKkArQSe5C2c2A1TX3eNJspihmX_T2TpehclCUlMbofiq9n_ypWDmfw60TZSvBX9WSprU-P_yhFaJjWOopjK9Y5Imms1FQ8W7Y2L2RPAwiuUZQlhJ4_3TmXqEOW5zJqv0YrKng5LxRutGSPHLRWjwTTFJiKqxKb76sj1qjfEqwn4jQuWcu0BWLv_SG0Mr"].map((img, idx) => (
                 <button 
                   key={idx}
                   onClick={() => setSelectedImage(img)}
@@ -958,11 +977,6 @@ const ProductDetailPage = () => {
           {/* Product Info */}
           <div className="flex flex-col">
             <div className="mb-8">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-[#29a847] font-black text-[10px] tracking-[0.3em] uppercase">{product.category}</span>
-                <div className="h-px flex-1 bg-slate-100"></div>
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight uppercase tracking-tighter">{product.name}</h1>
               <p className="text-slate-600 text-lg leading-relaxed mb-8">
                 {product.description}
               </p>
@@ -1021,51 +1035,219 @@ const ProductDetailPage = () => {
                 className="prose prose-slate max-w-none"
               >
                 {activeTab === 'description' && (
-                  <div className="space-y-6">
-                    <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Product Overview</h3>
-                    <p className="text-slate-600 leading-relaxed text-lg">
-                      The {product.name} is engineered for maximum precision and durability in industrial environments. Utilizing advanced resistive technology, it provides reliable feedback for critical control systems.
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                      <div className="flex gap-4">
-                        <div className="size-10 rounded-xl bg-[#29a847]/10 flex items-center justify-center text-[#29a847] shrink-0">
-                          <Check size={20} />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-slate-900 mb-1">High Linearity</h4>
-                          <p className="text-xs text-slate-500">Exceptional signal accuracy across the entire range of motion.</p>
-                        </div>
-                      </div>
-                      <div className="flex gap-4">
-                        <div className="size-10 rounded-xl bg-[#29a847]/10 flex items-center justify-center text-[#29a847] shrink-0">
-                          <Check size={20} />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-slate-900 mb-1">Robust Housing</h4>
-                          <p className="text-xs text-slate-500">Industrial-grade materials resistant to vibration and shock.</p>
-                        </div>
-                      </div>
+                  <div className="space-y-12">
+                    <div className="space-y-6">
+                      <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Product Overview</h3>
+                      <p className="text-slate-600 leading-relaxed text-lg">
+                        {product.description}
+                      </p>
                     </div>
+
+                    {product.benefits && (
+                      <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Key Benefits</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {product.benefits.map((benefit, idx) => (
+                            <div key={idx} className="flex gap-4 items-start">
+                              <div className="size-8 rounded-lg bg-[#29a847]/10 flex items-center justify-center text-[#29a847] shrink-0 mt-1">
+                                <Check size={16} />
+                              </div>
+                              <p className="text-slate-700 font-medium">{benefit}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {product.variants && (
+                      <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Available Variants</h3>
+                        <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                          <ul className="space-y-3">
+                            {product.variants.map((variant, idx) => (
+                              <li key={idx} className="flex gap-3 items-center text-slate-600 text-sm">
+                                <div className="size-1.5 rounded-full bg-[#29a847]"></div>
+                                {variant}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+
+                    {product.mounting_info && (
+                      <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Mounting Instructions</h3>
+                        <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                          <ul className="space-y-4">
+                            {product.mounting_info.map((info, idx) => (
+                              <li key={idx} className="flex gap-4 items-start text-slate-600 text-sm">
+                                <span className="font-black text-[#29a847]">{idx + 1}.</span>
+                                {info}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+
+                    {product.magnetic_cross_talk && (
+                      <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Magnetic Cross Talk</h3>
+                        <div className="bg-amber-50 border border-amber-200 p-8 rounded-2xl">
+                          <p className="text-amber-800 text-sm leading-relaxed italic">
+                            {product.magnetic_cross_talk}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
                 {activeTab === 'specifications' && (
-                  <div className="overflow-hidden rounded-2xl border border-slate-100">
-                    <table className="w-full text-left text-sm">
-                      <thead className="bg-slate-50 text-[10px] font-black uppercase tracking-widest text-slate-400">
-                        <tr>
-                          <th className="px-6 py-4">Parameter</th>
-                          <th className="px-6 py-4">Value</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-slate-100">
-                        {Object.entries(specs).map(([key, value]) => (
-                          <tr key={key} className="hover:bg-slate-50 transition-colors">
-                            <td className="px-6 py-4 font-bold text-slate-900 uppercase tracking-tight text-xs">{key.replace('_', ' ')}</td>
-                            <td className="px-6 py-4 text-slate-600">{value as string}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                  <div className="space-y-12">
+                    {product.electrical && (
+                      <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Electrical Parameters</h3>
+                        <div className="overflow-hidden rounded-2xl border border-slate-100">
+                          <table className="w-full text-left text-sm">
+                            <thead className="bg-slate-50 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                              <tr>
+                                <th className="px-6 py-4">Parameter</th>
+                                <th className="px-6 py-4">Results</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100">
+                              {product.electrical.map((item, idx) => (
+                                <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                                  <td className="px-6 py-4 font-bold text-slate-900 uppercase tracking-tight text-xs">{item.parameter}</td>
+                                  <td className="px-6 py-4 text-slate-600">{item.result}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    )}
+
+                    {product.electrical_options && (
+                      <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Electrical Output Options</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {product.electrical_options.map((opt, idx) => (
+                            <div key={idx} className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm">
+                              <div className="text-[#29a847] text-[10px] font-black uppercase tracking-widest mb-2">{opt.option}</div>
+                              <p className="text-slate-700 text-xs font-medium">{opt.description}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {product.mechanical && (
+                      <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Mechanical Parameters</h3>
+                        <div className="overflow-hidden rounded-2xl border border-slate-100 overflow-x-auto">
+                          <table className="w-full text-left text-sm min-w-[600px]">
+                            <thead className="bg-slate-50 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                              <tr>
+                                <th className="px-6 py-4">Parameters</th>
+                                <th className="px-6 py-4">Ball Bearing</th>
+                                <th className="px-6 py-4">Sleeve Bushing</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100">
+                              {product.mechanical.parameters.map((param, idx) => (
+                                <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                                  <td className="px-6 py-4 font-bold text-slate-900 uppercase tracking-tight text-xs">{param}</td>
+                                  <td className="px-6 py-4 text-slate-600">{product.mechanical?.ball_bearing[idx]}</td>
+                                  <td className="px-6 py-4 text-slate-600">{product.mechanical?.sleeve_bushing[idx]}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                      {product.material && (
+                        <div className="space-y-6">
+                          <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Material</h3>
+                          <div className="overflow-hidden rounded-2xl border border-slate-100">
+                            <table className="w-full text-left text-sm">
+                              <thead className="bg-slate-50 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                <tr>
+                                  <th className="px-6 py-4">Component</th>
+                                  <th className="px-6 py-4">Material</th>
+                                </tr>
+                              </thead>
+                              <tbody className="divide-y divide-slate-100">
+                                {product.material.map((item, idx) => (
+                                  <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                                    <td className="px-6 py-4 font-bold text-slate-900 uppercase tracking-tight text-xs">{item.component}</td>
+                                    <td className="px-6 py-4 text-slate-600">{item.material}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      )}
+
+                      {product.environment && (
+                        <div className="space-y-6">
+                          <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Environment</h3>
+                          <div className="overflow-hidden rounded-2xl border border-slate-100">
+                            <table className="w-full text-left text-sm">
+                              <thead className="bg-slate-50 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                <tr>
+                                  <th className="px-6 py-4">Parameter</th>
+                                  <th className="px-6 py-4">Value</th>
+                                </tr>
+                              </thead>
+                              <tbody className="divide-y divide-slate-100">
+                                {product.environment.map((item, idx) => (
+                                  <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                                    <td className="px-6 py-4 font-bold text-slate-900 uppercase tracking-tight text-xs">{item.parameter}</td>
+                                    <td className="px-6 py-4 text-slate-600">{item.value}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {product.ordering_info && (
+                      <div className="space-y-6">
+                        <h3 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Ordering Information</h3>
+                        <div className="bg-[#29a847]/5 border border-[#29a847]/20 p-8 rounded-2xl">
+                          <p className="text-[#29a847] font-mono text-sm font-bold">{product.ordering_info}</p>
+                        </div>
+                      </div>
+                    )}
+
+                    {!product.electrical && (
+                      <div className="overflow-hidden rounded-2xl border border-slate-100">
+                        <table className="w-full text-left text-sm">
+                          <thead className="bg-slate-50 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                            <tr>
+                              <th className="px-6 py-4">Parameter</th>
+                              <th className="px-6 py-4">Value</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-slate-100">
+                            {Object.entries(specs).map(([key, value]) => (
+                              <tr key={key} className="hover:bg-slate-50 transition-colors">
+                                <td className="px-6 py-4 font-bold text-slate-900 uppercase tracking-tight text-xs">{key.replace('_', ' ')}</td>
+                                <td className="px-6 py-4 text-slate-600">{value as string}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
                   </div>
                 )}
                 {activeTab === 'downloads' && (
@@ -1230,12 +1412,12 @@ const AdminPage = () => {
   });
 
   useEffect(() => {
-    fetch('/products.json').then(res => res.json()).then(setProducts);
+    fetch('/api/products').then(res => res.json()).then(setProducts);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch('/products.json', {
+    const res = await fetch('/api/products', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newProduct)
