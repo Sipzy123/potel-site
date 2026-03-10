@@ -866,7 +866,7 @@ const ProductsPage = () => {
                   <h4 className="font-bold text-lg">{product.name}</h4>
                   <span className="text-[#29a847] font-bold">{product.price}</span>
                 </div>
-                <p className="text-slate-500 text-sm mb-6">{product.description}</p>
+                <p className="text-slate-500 text-sm mb-6">{product.brief_description}</p>
                 <Link 
                   to={`/product/${product.id}`}
                   className="w-full py-3 bg-[#29a847] text-white font-bold rounded-lg hover:bg-[#29a847]/90 transition-all flex items-center justify-center gap-2"
@@ -1429,6 +1429,7 @@ const AdminPage = () => {
         name: '',
         category: CATEGORIES[0].name,
         subcategory: CATEGORIES[0].subcategories[0],
+        brief_description: '',
         description: '',
         price: '',
         image: '',
