@@ -108,7 +108,7 @@ const Navbar = () => {
               onMouseEnter={() => setActiveSubmenu('products')}
               onMouseLeave={() => setActiveSubmenu(null)}
             >
-              <Link to="/products" className={`px-6 py-4 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-all flex items-center gap-2 ${location.pathname.startsWith('/products') ? 'bg-white/20' : ''}`}>
+              <Link to="/public/products" className={`px-6 py-4 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-all flex items-center gap-2 ${location.pathname.startsWith('/products') ? 'bg-white/20' : ''}`}>
                 Products <ChevronDown size={14} />
               </Link>
               
@@ -373,7 +373,7 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    fetch('/api/products')
+    fetch('/products.json')
       .then(res => res.json())
       .then(data => setFeaturedProducts(data.filter((p: Product) => p.is_featured)));
   }, []);
@@ -803,7 +803,7 @@ const ProductsPage = () => {
   const subcategoryFilter = queryParams.get('subcategory');
 
   useEffect(() => {
-    fetch('/api/products')
+    fetch('/products.json')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
@@ -892,7 +892,7 @@ const ProductDetailPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch('/api/products')
+    fetch('/products.json')
       .then(res => res.json())
       .then(data => {
         const found = data.find((p: Product) => p.id === Number(id));
@@ -1230,12 +1230,12 @@ const AdminPage = () => {
   });
 
   useEffect(() => {
-    fetch('/api/products').then(res => res.json()).then(setProducts);
+    fetch('/products.json').then(res => res.json()).then(setProducts);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch('/api/products', {
+    const res = await fetch('/products.json', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newProduct)
