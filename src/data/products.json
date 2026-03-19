@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "name": "Rotary Miniature Angle Sensor",
+    "category": "Rotary Angles Sensors (Encoders)",
+    "subcategory": "Rotary Miniature Angle Sensor",
+    "brief_description": "Contactless rotary position sensor with programmable angle output, ideal for industrial applications.",
+    "description": "The Rotary Miniature Angle Sensor is used to detect the angle or speed of system which correspondence to the rotary motion of the shaft of the sensor. The Output signal correspondence to 0 to 360deg. This full range is programmable based on requirement. Since the Product is based on Contactless Magnetic Technology it has very long life. Endless Rotary sensor can be specially programmed to have 4,3 or 2 cycles in over revolution hence increasing the accuracy. For modern microcontrollers RHSS-12 is capable to give output in 0 to 3.3Vdc,SPI, I2C, Quadrature, Incremental and to suppress the effect of Noise PWM output version is also available. With wide range of Mechanical and electrical variant makes it an ideal product for the industry.",
+    "price": "Contact for Quote",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDzd2RlMP7AUTJhKmd98Cne7RvDlchXFL99X8a8N_sCDUV_30e6fiEFlO2B3_fyEnBX43vWmCsOf3crCl170nho0_AVwLBlaS2PEEOQFA3gLAEaHIypKswxMOY7lqPftAj4GZErQwdIR0ACjNNN8XC9sAVy2jiiCEraLV9xeilmx7zstkm0khBjkGl0hbUlVjJx3zrIkOOYcpVntJUk8IDTBXMjuHgjp_ZhaBYOJQWqJ23ew_Lvt8QejG34OelhCSYq_3MwidTujOhi",
+    "specs": "{\"resolution\":\"12-bit\",\"supply_voltage\":\"5V DC\",\"linearity\":\"+/- 0.3%\",\"operating_temp\":\"-40 to +85C\"}",
+    "is_featured": 1,
+    "variants": [
+      "12 bit resolution 0 to 3.3Vdc Analog Ratiometric Output.",
+      "12 bit resolution 0 to 5Vdc Analog Ratiometric Output.",
+      "12 bit resolution 0 to 5Vdc Analog Ratiometric Dual Output.",
+      "12 bit resolution PWM Output.",
+      "14 Bit resolution in 16bit transmission SPI output.",
+      "14 bit resolution in 8bit transmission in I2C output.",
+      "Upto 512 PPR in one revolution Low speed Quadrature output.",
+      "Upto 1024 PPR in one revolution incremental output.",
+      "Sleeve bushing, Servo Mount, Flange Mount and Ball Bearing versions.",
+      "Connectors or shielded cable available.",
+      "IP 69k Protection available."
+    ],
+    "benefits": [
+      "Non Contact Rotary Position Sensor based on Hall Effect Technology.",
+      "Accurate Linearity upto 1% F.S. or 0.5% F.S (on request)",
+      "Extremely Long Life.",
+      "Extremely Compact in Size.",
+      "Angle programmable based on customer specific requirement.",
+      "Short Circuit Protected. ( For 5Vdc and PWM output versions).",
+      "Overvoltage protected. ( For 5Vdc and PWM output versions).",
+      "Reverse polarity protected. ( For 5Vdc and PWM output versions)."
+    ],
+    "mechanical": {
+      "parameters": ["Starting Torque", "Maximum Radial Load", "Maximum Axial Load", "Maximum Shaft Speed", "Bearing Life cycles", "Weight of sensor", "Shaft Dia"],
+      "ball_bearing": ["8 gms. cm", "900 gms", "Nil", "1500 RPM", "500 X 10^6 @rated radial Load", "12 gms", "2.95mm"],
+      "sleeve_bushing": ["150 gms. cm", "470 gms", "Nil", "100 RPM", "20 X 10^6 @rated radial Load", "12 gms", "3.15mm or 6 mm or 6.3 mm"]
+    },
+    "electrical": [
+      { "parameter": "Supply Voltage (Vsupply)", "result": "5Vdc(+/- 10%) or 3.3Vdc" },
+      { "parameter": "Supply Current", "result": "20mA" },
+      { "parameter": "Response time", "result": "50mS" },
+      { "parameter": "Resolution", "result": "12bit" },
+      { "parameter": "Load Resistance", "result": "Minimum 10k ohms" },
+      { "parameter": "Output (Voutput)", "result": "3% to 97% Vsupply (Ratiometric)" },
+      { "parameter": "Linearity", "result": "1% Independent Linearity ( Available 0.5% on request)" }
+    ],
+    "material": [
+      { "component": "Housing", "material": "Brass" },
+      { "component": "Shaft", "material": "Stainless" },
+      { "component": "Ball Bearing", "material": "Stainless" }
+    ],
+    "environment": [
+      { "parameter": "Operating Temperature", "value": "-40 to 75 deg (standard), -40 to 140 deg (on request)" },
+      { "parameter": "Storage Temperature", "value": "-40 to 75 degC" },
+      { "parameter": "Vibration", "value": "20g." }
+    ],
+    "ordering_info": "RHSS-12 - I/p Voltage - Output range or type - angle - direction - shaft dia - XXX",
+    "mounting_info": [
+      "The hole in the panel should not be more than 9.5mm.",
+      "RHSS-12 should be mounted with Star washer given along with the product and perpendicularity between the panel and axis of Sensor should be maintained."
+    ],
+    "magnetic_cross_talk": "If two RHSS-12 units are to be installed closer than 2 inch (measured between the center of both shafts), a magnetic shield, such as a small steel plate should be installed in between to prevent one encoder from causing small changes in reported position through magnetic field cross-talk.",
+    "electrical_options": [
+      { "option": "OPTION 1", "description": "Standard 0 to 360deg output (1st Turn, 2nd Turn)." },
+      { "option": "OPTION 2", "description": "4 cycles in one Revolution (0-90, 90-180, 180-270, 270-360)." },
+      { "option": "OPTION 3", "description": "2 cycles in one Revolution (0-180, 180-360)." },
+      { "option": "OPTION 4", "description": "3 cycles in one Revolution (0-120, 120-240, 240-360)." }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Rotary Servo Non Contact Sensor",
+    "category": "Rotary Angles Sensors (Encoders)",
+    "subcategory": "Rotary Servo Non Contact Sensor",
+    "brief_description": "High-precision servo-mount non-contact sensor designed for high-speed feedback in industrial robotics.",
+    "description": "High-precision servo-mount non-contact sensor designed for high-speed feedback in industrial robotics.",
+    "price": "Contact for Quote",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDzd2RlMP7AUTJhKmd98Cne7RvDlchXFL99X8a8N_sCDUV_30e6fiEFlO2B3_fyEnBX43vWmCsOf3crCl170nho0_AVwLBlaS2PEEOQFA3gLAEaHIypKswxMOY7lqPftAj4GZErQwdIR0ACjNNN8XC9sAVy2jiiCEraLV9xeilmx7zstkm0khBjkGl0hbUlVjJx3zrIkOOYcpVntJUk8IDTBXMjuHgjp_ZhaBYOJQWqJ23ew_Lvt8QejG34OelhCSYq_3MwidTujOhi",
+    "specs": "{\"resolution\":\"14-bit\",\"supply_voltage\":\"5V DC\",\"linearity\":\"+/- 0.1%\",\"life\":\"Infinite\"}",
+    "is_featured": 1
+  },
+  {
+    "id": 3,
+    "name": "Rotary Multiturn Contactless Sensor",
+    "category": "Rotary Angles Sensors (Encoders)",
+    "subcategory": "Rotary Multiturn Contactless Sensor",
+    "brief_description": "Multiturn sensor capable of tracking up to 100 turns with absolute position feedback using Hall effect technology.",
+    "description": "Multiturn sensor capable of tracking up to 100 turns with absolute position feedback using Hall effect technology.",
+    "price": "Contact for Quote",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDPKHe3AMVNf5njsWcGJ66VPZU8kzJ1-G2CymqxGZHwMyzjzyWUyNsetp_L3SZxuKUNFgvcfQatGqVq1VulefBnyTYkxWIgBgo_uqfUrgQBzAV5AivYMbw01mYrqSmo7QLhVyrbTO-z9nHt9xuyAUxQNArSUQqRHwKEa-3vaEQYU6Wm7v-eU_GKZ8ctkSD8qLDv09W_fZRDmtpwPLa04443EjVD9llr55-XzwEh4uaW619tBqj2UukAUJOOAh2RrniQX-pempfQyKQX",
+    "specs": "{\"turns\":\"Up to 100\",\"resolution\":\"12-bit per turn\",\"interface\":\"Analog/PWM\",\"protection\":\"IP67\"}",
+    "is_featured": 0
+  },
+  {
+    "id": 4,
+    "name": "Linear Miniature Sensor (10mm)",
+    "category": "Linear Sensors (Transducers)",
+    "subcategory": "Linear Miniature Sensor (10mm)",
+    "brief_description": "Miniature linear displacement transducer with 10mm stroke, ideal for precision measurement in compact machines.",
+    "description": "Miniature linear displacement transducer with 10mm stroke, ideal for precision measurement in compact machines.",
+    "price": "Contact for Quote",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDbEJHZjSPCaaiBq2YmLoBubHKWBTPBLV6IW74usbU7X-6Q8OrULUA9gJ5p71eplmJxmzwDIxZV5sg-gdcVKkArQSe5C2c2A1TX3eNJspihmX_T2TpehclCUlMbofiq9n_ypWDmfw60TZSvBX9WSprU-P_yhFaJjWOopjK9Y5Imms1FQ8W7Y2L2RPAwiuUZQlhJ4_3TmXqEOW5zJqv0YrKng5LxRutGSPHLRWjwTTFJiKqxKb76sj1qjfEqwn4jQuWcu0BWLv_SG0Mr",
+    "specs": "{\"stroke\":\"10mm\",\"linearity\":\"+/- 0.5%\",\"technology\":\"Potentiometric\",\"life\":\"10M cycles\"}",
+    "is_featured": 1
+  },
+  {
+    "id": 5,
+    "name": "Precision Wirewound Potentiometer",
+    "category": "Potentiometers",
+    "subcategory": "Precision Wirewound",
+    "brief_description": "High-precision wirewound potentiometer for manual or motor-driven control in instrumentation.",
+    "description": "High-precision wirewound potentiometer for manual or motor-driven control in instrumentation.",
+    "price": "Contact for Quote",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuACMT_YjSCymVySux1WO-56GUqM74b09Qz5fQXGBxP-65UXwer6pVkVZfp05UHxvBNFY-QxqfcNNjQngPz5JtC67dBTcd8M0t1imv_1NT9Zl5rOSQ9OEkUSLdX6Xrsbu5594OVqfY5WBsltE7I21mpPyzOXu265rlPfF8xgfhgSIrF8xxJRQcFWahKVG2xw0nU0Ob8GLAf_ExbqIuLkGr6BYi5woRyQ524u5xWrMrVwZg-F1Z6gr3j7Yn7mtopsilu0OjdO-71YbWla",
+    "specs": "{\"resistance\":\"1k to 100k\",\"tolerance\":\"+/- 5%\",\"power\":\"2W\",\"linearity\":\"+/- 0.25%\"}",
+    "is_featured": 0
+  }
+]
