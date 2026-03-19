@@ -34,7 +34,6 @@
       "Reverse polarity protected. ( For 5Vdc and PWM output versions)."
     ],
     "mechanical": {
-<<<<<<< HEAD
       "parameters": [
         "Starting Torque",
         "Maximum Radial Load",
@@ -120,30 +119,6 @@
         "parameter": "Vibration",
         "value": "20g."
       }
-=======
-      "parameters": ["Starting Torque", "Maximum Radial Load", "Maximum Axial Load", "Maximum Shaft Speed", "Bearing Life cycles", "Weight of sensor", "Shaft Dia"],
-      "ball_bearing": ["8 gms. cm", "900 gms", "Nil", "1500 RPM", "500 X 10^6 @rated radial Load", "12 gms", "2.95mm"],
-      "sleeve_bushing": ["150 gms. cm", "470 gms", "Nil", "100 RPM", "20 X 10^6 @rated radial Load", "12 gms", "3.15mm or 6 mm or 6.3 mm"]
-    },
-    "electrical": [
-      { "parameter": "Supply Voltage (Vsupply)", "result": "5Vdc(+/- 10%) or 3.3Vdc" },
-      { "parameter": "Supply Current", "result": "20mA" },
-      { "parameter": "Response time", "result": "50mS" },
-      { "parameter": "Resolution", "result": "12bit" },
-      { "parameter": "Load Resistance", "result": "Minimum 10k ohms" },
-      { "parameter": "Output (Voutput)", "result": "3% to 97% Vsupply (Ratiometric)" },
-      { "parameter": "Linearity", "result": "1% Independent Linearity ( Available 0.5% on request)" }
-    ],
-    "material": [
-      { "component": "Housing", "material": "Brass" },
-      { "component": "Shaft", "material": "Stainless" },
-      { "component": "Ball Bearing", "material": "Stainless" }
-    ],
-    "environment": [
-      { "parameter": "Operating Temperature", "value": "-40 to 75 deg (standard), -40 to 140 deg (on request)" },
-      { "parameter": "Storage Temperature", "value": "-40 to 75 degC" },
-      { "parameter": "Vibration", "value": "20g." }
->>>>>>> ed1eee7765d5e32992c9220fc4fed5f440c7f09f
     ],
     "ordering_info": "RHSS-12 - I/p Voltage - Output range or type - angle - direction - shaft dia - XXX",
     "mounting_info": [
@@ -152,7 +127,6 @@
     ],
     "magnetic_cross_talk": "If two RHSS-12 units are to be installed closer than 2 inch (measured between the center of both shafts), a magnetic shield, such as a small steel plate should be installed in between to prevent one encoder from causing small changes in reported position through magnetic field cross-talk.",
     "electrical_options": [
-<<<<<<< HEAD
       {
         "option": "OPTION 1",
         "description": "Standard 0 to 360deg output (1st Turn, 2nd Turn)."
@@ -184,13 +158,6 @@
       }
     ],
     "downloads": []
-=======
-      { "option": "OPTION 1", "description": "Standard 0 to 360deg output (1st Turn, 2nd Turn)." },
-      { "option": "OPTION 2", "description": "4 cycles in one Revolution (0-90, 90-180, 180-270, 270-360)." },
-      { "option": "OPTION 3", "description": "2 cycles in one Revolution (0-180, 180-360)." },
-      { "option": "OPTION 4", "description": "3 cycles in one Revolution (0-120, 120-240, 240-360)." }
-    ]
->>>>>>> ed1eee7765d5e32992c9220fc4fed5f440c7f09f
   },
   {
     "id": 2,
@@ -240,8 +207,4 @@
     "specs": "{\"resistance\":\"1k to 100k\",\"tolerance\":\"+/- 5%\",\"power\":\"2W\",\"linearity\":\"+/- 0.25%\"}",
     "is_featured": 0
   }
-<<<<<<< HEAD
 ]
-=======
-]
->>>>>>> ed1eee7765d5e32992c9220fc4fed5f440c7f09f

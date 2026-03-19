@@ -263,7 +263,10 @@ const FloatingDock = () => {
                   onMouseEnter={() => setHovered(i)}
                   animate={{ scale }}
                   transition={{ type: 'spring', damping: 18, stiffness: 320 }}
-                  style={{ transformOrigin: 'bottom center' }}
+                  style={{
+                    transformOrigin: 'bottom center',
+                    background: isProductsOpen ? '#29a847' : active ? 'rgba(41,168,71,0.18)' : 'rgba(255,255,255,0.06)',
+                  }}
                   aria-label={item.label}
                   className={`
                     relative flex items-center justify-center rounded-full transition-colors duration-200
@@ -275,13 +278,6 @@ const FloatingDock = () => {
                       : 'text-slate-300 hover:text-white'
                     }
                   `}
-                  style={{
-                    background: isProductsOpen
-                      ? '#29a847'
-                      : active
-                      ? 'rgba(41,168,71,0.18)'
-                      : 'rgba(255,255,255,0.06)',
-                  }}
                 >
                   {item.icon}
                   {/* Active dot */}
